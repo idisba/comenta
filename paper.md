@@ -9,11 +9,11 @@ tags:
   - scientific documents
   - bioinformatics
 authors:
-  - name: Josep Muncunill
-    orcid: 0000-0000-0000-0000
+  - name: Josep Muncunill Farreny
+    orcid: 0000-0002-7678-0205
     affiliation: 1
 affiliations:
-  - name: Institut d'Investigació Sanitària Illes Balears (IDISBA), Palma, Spain
+  - name: Plataforma Genòmica i Bioinformatica Institut d'Investigació Sanitària Illes Balears (IDISBA), Palma, Spain
     index: 1
 date: 17 November 2026
 bibliography: paper.bib
