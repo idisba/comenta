@@ -1,149 +1,150 @@
 # Comenta 📝🤖
 
-**Co**mentari **Co**l·laboratiu i **Menta** (Mentor IA) per Documents Científics
+**CO**llaborative **ME**ntions and **N**otes with **TA**sked AI
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![R-CMD-check](https://github.com/idisba/Comenta/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/idisba/Comenta/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/idisba/comenta/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/idisba/comenta/actions/workflows/R-CMD-check.yaml)
 [![Project Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24310215.svg)](https://doi.org/10.5281/zenodo.24310215)
 
-## Descripció
+## Description
 
-**Comenta** és una suite d'aplicacions Shiny desenvolupada per IDISBA per facilitar l'anotació i comentari de documents científics amb suport d'Intel·ligència Artificial (Gemini Flash i Ollama local).
+**Comenta** is a suite of Shiny applications developed by IDISBA to facilitate collaborative annotation and commenting of scientific documents with Artificial Intelligence support (Google Gemini Flash and local Ollama models).
 
-### 🎯 Funcionalitats
+### 🎯 Features
 
-- 📄 **Anotació de PDFs** amb PyMuPDF i pàgina de resum automàtica
-- 🌐 **Anotació d'HTMLs** amb auto-interpretació de taules i gràfics
-- 📊 **Anotació de gràfics** PNG amb punts clicables
-- 👥 **Mode col·laboratiu** amb base de dades SQLite
-- 🤖 **IA integrada**: Interpretar, Analitzar, Recomanar, Resumir
+- 📄 **PDF annotation** with PyMuPDF and automatic summary page generation
+- 🌐 **HTML annotation** with automatic interpretation of tables and figures
+- 📊 **Graphics annotation** for PNG files with clickable coordinate markers
+- 👥 **Collaborative mode** with SQLite database for multi-user workflows
+- 🤖 **AI integration**: Interpret, Analyze, Recommend, Summarize
   - Google Gemini Flash 2.0
-  - Ollama (local, privat)
+  - Ollama (local, private)
+- 🔗 **Automatic biomedical term linking** to PubMed, NCBI Gene, and UniProt
 
-## Instal·lació
+## Installation
 
-### Des de GitHub
+### From GitHub
 
 ```r
-# Instal·lar devtools si no el tens
+# Install devtools if you don't have it
 install.packages("devtools")
 
-# Instal·lar Comenta
-devtools::install_github("idisba/Comenta")
+# Install Comenta
+devtools::install_github("idisba/comenta")
 ```
 
-### Dependencies Python (opcional, per PDFs)
+### Python Dependencies (optional, for PDF annotation)
 
-Per l'aplicació de PDFs necessites Python 3 amb PyMuPDF:
+The PDF annotation app requires Python 3 with PyMuPDF:
 
 ```bash
 pip3 install PyMuPDF
 ```
 
-### API Keys (opcional)
+### API Keys (optional)
 
-Per usar Gemini:
+For Google Gemini:
 ```r
-# Definir al .Renviron
-GEMINI_API_KEY=la_teva_clau_aqui
+# Add to your .Renviron file
+GEMINI_API_KEY=your_key_here
 ```
 
-Per usar Ollama (local):
+For Ollama (local):
 ```bash
-# Instal·lar Ollama: https://ollama.ai
-ollama pull qwen2.5:7b  # o un altre model
+# Install Ollama: https://ollama.ai
+ollama pull qwen2.5:7b  # or another model
 ```
 
-## Ús
+## Usage
 
-### Aplicació Col·laborativa
+### Collaborative Annotation App
 
 ```r
 library(Comenta)
 run_colab()
 ```
 
-Funcionalitats:
-- Base de dades SQLite per múltiples usuaris
-- Pujar PDFs/HTMLs
-- Comentaris amb IA
-- Exportar documents anotats
+Features:
+- SQLite database for multiple users
+- Upload PDFs/HTMLs
+- AI-assisted comments
+- Export annotated documents
 
-### Aplicació de PDFs
+### PDF Annotation App
 
 ```r
 library(Comenta)
 run_pdf()
 ```
 
-Funcionalitats:
-- Anotar PDFs amb postits al marge
-- Auto-interpretació amb IA
-- Pàgina de resum automàtica al final
-- Exportar PDF anotat
+Features:
+- Annotate PDFs with sticky notes in margins
+- AI-powered auto-interpretation
+- Automatic summary page at the end
+- Export annotated PDF with permanent annotations
 
-### Aplicació d'HTMLs
+### HTML Annotation App
 
 ```r
 library(Comenta)
 run_public()
 ```
 
-Funcionalitats:
-- Toolbars automàtics a taules i gràfics
-- Interpretar, Analitzar, Resumir seccions
-- Notes ancorades
-- Exportar HTML anotat
+Features:
+- Automatic toolbars on tables and figures
+- Interpret, Analyze, and Summarize sections
+- Anchored notes
+- Export annotated HTML
 
-### Aplicació de Gràfics
+### Graphics Annotation App
 
 ```r
 library(Comenta)
 run_grafics()
 ```
 
-Funcionalitats:
-- Pujar PNG
-- Afegir anotacions clicant sobre el gràfic
-- Comentaris amb coordenades
-- Exportar imatge anotada
+Features:
+- Upload PNG images
+- Add annotations by clicking on the graphic
+- Comments with coordinate markers
+- Export annotated image
 
-## Estructura del Paquet
+## Package Structure
 
 ```
 Comenta/
 ├── R/
-│   ├── run_apps.R           # Funcions run_*()
-│   ├── gemini_helper.R      # Funcions Gemini
-│   └── ollama_helper.R      # Funcions Ollama
+│   ├── run_apps.R           # run_*() functions
+│   ├── gemini_helper.R      # Gemini API functions
+│   └── ollama_helper.R      # Ollama functions
 ├── inst/
-│   ├── colab/               # App col·laborativa
-│   ├── pdf/                 # App PDFs
-│   ├── grafics/             # App gràfics
-│   └── public/              # App HTMLs
-├── python/
-│   └── anotar_pdf.py        # Script PyMuPDF
-└── man/                     # Documentació
+│   ├── colab/               # Collaborative app
+│   ├── pdf/                 # PDF app
+│   ├── grafics/             # Graphics app
+│   └── public/              # HTML app
+├── inst/python/
+│   └── anotar_pdf.py        # PyMuPDF script
+└── man/                     # Documentation
 ```
 
-## Configuració Avançada
+## Advanced Configuration
 
-### Models Ollama Recomanats
+### Recommended Ollama Models
 
 ```bash
-# Models petits (7B) - ràpids
+# Small models (7B) - fast
 ollama pull qwen2.5:7b
 ollama pull llama3.2:latest
 
-# Models mitjans (13B) - equilibrats
+# Medium models (13B) - balanced
 ollama pull qwen2.5:14b
 
-# Models grans (70B+) - màxima qualitat
+# Large models (32B+) - highest quality
 ollama pull qwen2.5:32b
 ```
 
-### Variables d'Entorn
+### Environment Variables
 
 ```bash
 # .Renviron
@@ -151,126 +152,127 @@ GEMINI_API_KEY=your_key_here
 OLLAMA_HOST=http://localhost:11434
 ```
 
-## Exemples
+## Examples
 
-### Exemple 1: Analitzar PDF amb IA
+### Example 1: Analyze PDF with AI
 
 ```r
 library(Comenta)
 
-# Llançar app
+# Launch app
 run_pdf()
 
-# 1. Puja un PDF científic
-# 2. Selecciona text d'una taula
-# 3. Clica "📊 Analitzar"
-# 4. La IA genera anàlisi estadística
-# 5. Clica "🎨 Generar PDF Anotat"
-# 6. Descarrega PDF amb anotacions + pàgina resum
+# 1. Upload a scientific PDF
+# 2. Select text from a table
+# 3. Click "📊 Analyze"
+# 4. AI generates statistical analysis
+# 5. Click "🎨 Generate Annotated PDF"
+# 6. Download PDF with annotations + summary page
 ```
 
-### Exemple 2: Interpretar HTML
+### Example 2: Interpret HTML Report
 
 ```r
 library(Comenta)
 
-# Llançar app
+# Launch app
 run_public()
 
-# 1. Puja un report HTML (NanoPlot, MultiQC, etc.)
-# 2. Passa el ratolí sobre una taula
-# 3. Apareix toolbar automàtic
-# 4. Clica "🔍 Interpretar"
-# 5. La IA explica els resultats en català
+# 1. Upload an HTML report (e.g., MultiQC, FastQC)
+# 2. Hover over a table
+# 3. Automatic toolbar appears
+# 4. Click "🔍 Interpret"
+# 5. AI explains the results
 ```
 
-## Desenvolupament
+## Development
 
-### Instal·lació Local
+### Local Installation
 
-Per desenvolupar i modificar el paquet:
+To develop and modify the package:
 
 ```bash
-# Clonar repositori
-git clone https://github.com/idisba/Comenta.git
-cd Comenta
+# Clone repository
+git clone https://github.com/idisba/comenta.git
+cd comenta
 
-# Instal·lar des del directori local
-devtools::install(".", dependencies = FALSE)
+# Install from local directory
+R -e "devtools::install('.', dependencies = FALSE)"
 
-# Provar
-library(Comenta)
-run_pdf()
+# Test
+R -e "library(Comenta); run_pdf()"
 ```
 
-### Actualitzar després de Canvis
+### Updating After Changes
 
-Quan modifiques fitxers a `inst/`, cal reinstal·lar:
+When you modify files in `inst/`, you need to reinstall:
 
 ```bash
-# Opció 1: Script automàtic (recomanat)
+# Option 1: Automated script (recommended)
 ./actualitzar.sh
 
-# Opció 2: Manual
-devtools::install(".", dependencies = FALSE)
+# Option 2: Manual
+R -e "devtools::install('.', dependencies = FALSE)"
 ```
 
-El script `actualitzar.sh`:
-- Reinstal·la el paquet
-- Reinicia les apps del servidor Shiny automàticament
-- Manté tot sincronitzat
+The `actualitzar.sh` script:
+- Reinstalls the package
+- Automatically restarts Shiny Server apps
+- Keeps everything synchronized
 
-### Servidor Shiny
+See `DESENVOLUPAMENT.md` for detailed development guidelines (in Catalan).
 
-Les apps del directori `/opt/shiny-server/samples/sample-apps/comenta-server/` són "wrappers" que criden el paquet instal·lat. **Sempre usen el paquet instal·lat**, així que:
+## Testing
 
-1. Edita els fitxers a `Comenta/inst/`
-2. Executa `./actualitzar.sh`
-3. Les apps del servidor i `library(Comenta)` estan sincronitzades ✅
+The package includes 36 automated tests:
 
-### Estructura de Desenvolupament
-
-```
-/opt/shiny-server/samples/sample-apps/
-├── Comenta/                    # ← Edita aquí
-│   ├── inst/colab/app.R
-│   ├── inst/pdf/app.R
-│   ├── inst/grafics/app.R
-│   ├── inst/public/app.R
-│   └── actualitzar.sh          # ← Executa després d'editar
-│
-└── comenta-server/             # ← NO editis aquí (només wrappers)
-    ├── colab/app.R             # Crida library(Comenta); shinyAppDir(...)
-    ├── pdf/app.R
-    ├── grafics/app.R
-    └── public/app.R
+```r
+devtools::test()
 ```
 
-## Contribuir
+Continuous integration via GitHub Actions tests on Ubuntu, Windows, and macOS.
 
-Ets benvingut a contribuir al projecte! 
+## Citation
 
-1. Fork el repositori
-2. Crea una branca (`git checkout -b feature/nova-funcionalitat`)
-3. Commit els canvis (`git commit -am 'Afegir nova funcionalitat'`)
-4. Push a la branca (`git push origin feature/nova-funcionalitat`)
-5. Obre un Pull Request
+If you use Comenta in your research, please cite:
 
-## Suport
+```bibtex
+@software{comenta_2026,
+  author       = {IDISBA Bioinformatics Team},
+  title        = {Comenta: Collaborative Scientific Document Annotation with AI},
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {v0.1.0},
+  doi          = {10.5281/zenodo.24310215},
+  url          = {https://doi.org/10.5281/zenodo.24310215}
+}
+```
 
-Per problemes o preguntes:
-- 🐛 [Issues](https://github.com/idisba/Comenta/issues)
+## Contributing
+
+Contributions are welcome! 
+
+1. Fork the repository
+2. Create a branch (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Open a Pull Request
+
+## Support
+
+For issues or questions:
+- 🐛 [GitHub Issues](https://github.com/idisba/comenta/issues)
 - 📧 Email: bioinformatica@idisba.es
 
-## Llicència
+## License
 
-MIT License - Copyright (c) 2024 IDISBA
+MIT License - Copyright (c) 2026 IDISBA
 
-## Autors
+## Authors
 
 **IDISBA - Institut d'Investigació Sanitària Illes Balears**
-- Equip de Bioinformàtica
+- Bioinformatics Team
 
 ---
 
-Desenvolupat amb ❤️ a les Illes Balears 🏝️
+Developed with ❤️ at the Balearic Islands 🏝️
