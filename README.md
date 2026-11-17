@@ -1,6 +1,6 @@
 # Comenta 📝🤖
 
-**CO**llaborative **ME**ntions and **N**otes with **TA**sked AI
+**CO**llaborative **ME**ntions and **N**otes with AI
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Project Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
