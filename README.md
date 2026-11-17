@@ -3,7 +3,6 @@
 **CO**llaborative **ME**ntions and **N**otes with **TA**sked AI
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![R-CMD-check](https://github.com/idisba/comenta/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/idisba/comenta/actions/workflows/R-CMD-check.yaml)
 [![Project Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24310215.svg)](https://doi.org/10.5281/zenodo.24310215)
 
@@ -275,4 +274,4 @@ MIT License - Copyright (c) 2026 IDISBA
 
 ---
 
-Developed with ❤️ at the Balearic Islands 🏝️
+
