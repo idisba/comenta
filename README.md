@@ -3,6 +3,8 @@
 **Co**mentari **Co**l·laboratiu i **Menta** (Mentor IA) per Documents Científics
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![R-CMD-check](https://github.com/idisba/Comenta/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/idisba/Comenta/actions/workflows/R-CMD-check.yaml)
+[![Project Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 ## Descripció
 
