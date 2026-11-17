@@ -1,0 +1,35 @@
+Package: Comenta
+Type: Package
+Title: Comentari Col·laboratiu i Mentor IA per Documents Científics
+Version: 0.1.0
+Authors@R: c(
+    person("IDISBA", "Bioinformàtica", email = "bioinformatica@idisba.es", role = c("aut", "cre"))
+    )
+Description: Suite d'aplicacions Shiny per anotar i comentar documents científics
+    (PDFs, HTMLs, gràfics) amb suport d'Intel·ligència Artificial (Gemini, Ollama).
+    Inclou funcionalitat col·laborativa amb base de dades SQLite i generació
+    automàtica de PDFs anotats amb PyMuPDF.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends:
+    R (>= 4.0.0)
+Imports:
+    shiny (>= 1.7.0),
+    bs4Dash (>= 2.0.0),
+    DT,
+    jsonlite,
+    httr,
+    shinyjs,
+    RSQLite,
+    DBI,
+    reticulate
+Suggests:
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+RoxygenNote: 7.3.3
+URL: https://github.com/idisba/Comenta
+BugReports: https://github.com/idisba/Comenta/issues
+Config/testthat/edition: 3

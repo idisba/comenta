@@ -1,0 +1,125 @@
+#' Comenta: Comentari Col·laboratiu i Mentor IA
+#'
+#' Suite d'aplicacions Shiny per anotar i comentar documents científics
+#' (PDFs, HTMLs, gràfics) amb suport d'Intel·ligència Artificial.
+#'
+#' @section Aplicacions:
+#'
+#' \strong{Aplicació Col·laborativa} (\code{\link{run_colab}}):
+#' \itemize{
+#'   \item Base de dades SQLite per múltiples usuaris
+#'   \item Pujar i anotar PDFs/HTMLs
+#'   \item Comentaris amb IA (Gemini/Ollama)
+#'   \item Exportar documents anotats
+#' }
+#'
+#' \strong{Aplicació de PDFs} (\code{\link{run_pdf}}):
+#' \itemize{
+#'   \item Anotar PDFs amb PyMuPDF
+#'   \item Postits al marge dret
+#'   \item Pàgina de resum automàtica
+#'   \item Exportar PDF anotat
+#' }
+#'
+#' \strong{Aplicació d'HTMLs} (\code{\link{run_public}}):
+#' \itemize{
+#'   \item Toolbars automàtics a taules/gràfics
+#'   \item Auto-interpretació amb IA
+#'   \item Notes ancorades visuals
+#'   \item Exportar HTML anotat
+#' }
+#'
+#' \strong{Aplicació de Gràfics} (\code{\link{run_grafics}}):
+#' \itemize{
+#'   \item Anotar imatges PNG
+#'   \item Comentaris amb coordenades
+#'   \item Exportar imatge anotada
+#' }
+#'
+#' @section Intel·ligència Artificial:
+#'
+#' Comenta integra dos sistemes d'IA:
+#'
+#' \strong{Google Gemini Flash 2.0}:
+#' \itemize{
+#'   \item API Key requerida (gratis amb límits)
+#'   \item Configurar: \code{Sys.setenv(GEMINI_API_KEY = "...")}
+#'   \item Ràpid i precís per text científic
+#' }
+#'
+#' \strong{Ollama (Local)}:
+#' \itemize{
+#'   \item 100\% privat, sense enviar dades fora
+#'   \item Models recomanats: qwen2.5:7b, llama3.2
+#'   \item Instal·lar: \url{https://ollama.ai}
+#' }
+#'
+#' \strong{Accions disponibles}:
+#' \itemize{
+#'   \item \strong{Interpretar}: Explicar resultats científics
+#'   \item \strong{Analitzar}: Anàlisi estadística de dades
+#'   \item \strong{Recomanar}: Suggeriments metodològics
+#'   \item \strong{Resumir}: Síntesi de seccions llargues
+#' }
+#'
+#' @section Requisits:
+#'
+#' \strong{R packages} (instal·lats automàticament):
+#' \itemize{
+#'   \item shiny, bs4Dash, DT, jsonlite, httr
+#'   \item shinyjs, RSQLite, DBI, reticulate
+#' }
+#'
+#' \strong{Python} (opcional, per PDFs):
+#' \itemize{
+#'   \item Python >= 3.8
+#'   \item PyMuPDF: \code{pip3 install PyMuPDF}
+#' }
+#'
+#' @section Inici ràpid:
+#'
+#' \preformatted{
+#' # Instal·lar
+#' devtools::install_github("idisba/Comenta")
+#'
+#' # Verificar configuració
+#' source(system.file("setup.R", package = "Comenta"))
+#'
+#' # Llançar aplicació
+#' library(Comenta)
+#' run_colab()    # o run_pdf(), run_public(), run_grafics()
+#' }
+#'
+#' @section Configuració avançada:
+#'
+#' \strong{Fitxer .Renviron}:
+#' \preformatted{
+#' GEMINI_API_KEY=your_key_here
+#' OLLAMA_HOST=http://localhost:11434
+#' }
+#'
+#' \strong{Models Ollama recomanats}:
+#' \preformatted{
+#' ollama pull qwen2.5:7b      # Ràpid (recomanat)
+#' ollama pull llama3.2:latest # Alternatiu
+#' ollama pull qwen2.5:32b     # Alta qualitat
+#' }
+#'
+#' @docType package
+#' @name Comenta-package
+#' @aliases Comenta
+#'
+#' @author IDISBA - Institut d'Investigació Sanitària Illes Balears
+#'   \email{bioinformatica@@idisba.es}
+#'
+#' @seealso
+#' Útil:
+#' \itemize{
+#'   \item \code{\link{run_colab}} - Llançar app col·laborativa
+#'   \item \code{\link{run_pdf}} - Llançar app PDFs
+#'   \item \code{\link{run_public}} - Llançar app HTMLs
+#'   \item \code{\link{run_grafics}} - Llançar app gràfics
+#' }
+#'
+#' @keywords package shiny bioinformatics annotation AI
+NULL

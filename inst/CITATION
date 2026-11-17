@@ -1,0 +1,16 @@
+citHeader("To cite Comenta in publications use:")
+
+bibentry(
+  bibtype  = "Manual",
+  title    = "Comenta: Collaborative Scientific Document Annotation with AI",
+  author   = "IDISBA Bioinformatics Team",
+  year     = 2026,
+  note     = "R package version 0.1.0",
+  url      = "https://github.com/idisba/Comenta",
+  textVersion = paste(
+    "IDISBA Bioinformatics Team (2026).",
+    "Comenta: Collaborative Scientific Document Annotation with AI.",
+    "R package version 0.1.0.",
+    "https://github.com/idisba/Comenta"
+  )
+)

@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "Si utilitzes aquest software, si us plau cita'l usant aquestes metadades."
+type: software
+title: "Comenta: Collaborative Scientific Document Annotation with AI"
+version: 0.1.0
+date-released: 2026-11-17
+url: "https://github.com/idisba/Comenta"
+repository-code: "https://github.com/idisba/Comenta"
+license: MIT
+authors:
+  - family-names: "IDISBA Bioinformatics Team"
+    affiliation: "Institut d'Investigació Sanitària Illes Balears"
+    city: "Palma"
+    country: "ES"
+keywords:
+  - annotation
+  - scientific-documents
+  - shiny
+  - R
+  - artificial-intelligence
+  - bioinformatics
+  - collaborative
+  - pdf-annotation
+abstract: >-
+  Comenta is a suite of Shiny applications developed by IDISBA to facilitate
+  annotation and collaborative commenting of scientific documents with
+  Artificial Intelligence support (Gemini Flash and local Ollama). It includes
+  four specialized applications: PDF annotation with PyMuPDF, HTML document
+  annotation with automatic interpretation, PNG graphics annotation, and a
+  collaborative mode with SQLite database. The package integrates AI features
+  for interpreting, analyzing, recommending, and summarizing scientific content,
+  with automatic biomedical term linking to PubMed, NCBI, and UniProt.
